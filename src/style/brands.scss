@@ -1,0 +1,17 @@
+.brands-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 35px 0;
+    img {
+        object-fit: contain;
+        @media screen and (max-width: $tableWidth) {
+            display: none;
+            &:first-of-type{
+                display: block;
+            }
+        }
+    }
+    @media screen and (max-width: $tableWidth) {
+     justify-content: center;   
+    }
+}

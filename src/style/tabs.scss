@@ -1,0 +1,141 @@
+.tabs-container {
+    padding: 30px 0;
+    border-bottom: 1px solid #c7c7c7;
+    .controls-container, .tabs-items {
+        display: flex;
+        flex-wrap: wrap;
+        @media screen and (max-width: $tableWidth) {
+            flex-direction: column;
+           }
+    }
+
+    .controls-container {
+        margin-bottom: 15px;
+
+        
+        button.button-item {
+            cursor: pointer;
+            background: #ececec;
+            padding: 15px 20px;
+            border: 1px solid #bababa;
+            margin: 1px;
+            margin-right: 1px;
+            color: $text-color;
+            @media screen and (max-width: $tableWidth) {
+                width: 100%;
+               }
+            &.active {
+                background: #619896;
+                border: 1px solid #757676;
+                color: white;
+                span {
+                    border-bottom: 1px dashed white;
+                }
+            }
+
+            span {
+                font-size: 18px;
+                text-transform: uppercase;
+                border-bottom: 1px solid transparent;
+                padding-bottom: 2px;
+            }
+            &:hover > span {
+                color: white;
+                border-bottom: 1px dashed white;
+            }
+            &:hover {
+                background: #619896;
+                border: 1px solid #757676;
+            }
+        }
+    }
+
+    .tabs-items {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        .tab-item{
+            max-width: 17%;
+            min-width: 17%;
+            text-align: center;
+            @media screen and (max-width: $tableWidth) {
+                min-width: 100%;
+                margin-bottom: 30px;
+            };
+        }
+        img {
+            width: 100%;
+            object-fit: contain;
+            margin-bottom: 20px
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+        span {
+            font-weight: 600;
+            color: $highlight-color;
+        }
+    }
+
+    .tab-item {
+        position: relative;
+        &:hover > .tools-button {
+            opacity: 1;
+        }
+        .tools-button {
+            transition: opacity .5s ease-in-out;
+            opacity: 0;
+            position: absolute;
+            top: 15px;
+            left: 1px;
+            text-align: left;
+            .flag-category {
+                position: relative;
+                margin-bottom: 15px;
+                background: #1f56ae;
+                span {
+                    display: block;
+                    padding: 8px 8px;
+                    color: white;
+                }
+                &::after {
+                    position: absolute;
+                    top: 0;
+                    right: -15px;
+                    content: '';
+                    width: 0; 
+                    height: 0;
+                    border-top: 15px solid #1f56ae;
+                    border-right: 15px solid transparent;
+                }
+                &::before {
+                    position: absolute;
+                    top: calc(100% - 15px);
+                    right: -15px;
+                    content: '';
+                    width: 0; 
+                    height: 0;
+                    border-bottom: 15px solid #1f56ae;
+                    border-right: 15px solid transparent;
+                }
+            }
+            button {
+                border: 0;
+                width: 30px;
+                height: 30px;
+                margin-bottom: 4px;
+                cursor: pointer;
+                &:hover {
+                    background: $highlight-color;
+                }
+
+                // &.active {
+                //     background: $highlight-color;
+                // }
+            }
+            img {
+                margin: 0;
+            }
+        }
+    }
+}

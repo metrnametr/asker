@@ -1,0 +1,48 @@
+
+@import '~reset-css/sass/_reset.scss';
+
+@import './variables.scss';
+@import './header.scss';
+
+@import './main_page.scss';
+@import './tabs.scss';
+@import './brands.scss';
+@import './footer.scss';
+html {
+    line-height: $mainLineHeight;
+    font-size: $mainFontSize;
+    color: $text-color;
+    height: 100%;
+    @media screen and (max-width: $desktopWidth) {
+        font-size: 16px;
+    }
+    @media screen and (max-width: $tableWidth) {
+        font-size: 15px;
+    }
+    @media screen and (max-width: $phoneWidth) {
+        font-size: 14px;
+    }
+}
+  
+body {
+    margin: 0;
+    padding: 0;
+    font-family: $mainFont;
+    font-size: $mainFontSize;
+    font-weight: $mainFontWeight;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: all .5s ease;
+}
+  
+.container {
+    padding: 0 8%;
+    @media screen and (max-width: $tableWidth) {
+        padding: 0 1%;
+       }
+}
+
+a {
+    text-decoration: none;
+    color: $highlight-color;
+}
