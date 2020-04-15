@@ -1,6 +1,7 @@
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
+const imageminMozjpeg = require('imagemin-mozjpeg');
 
 module.exports = {
     entry: './src/index.js',
@@ -42,9 +43,8 @@ module.exports = {
             template: './src/index.html'
         }),
         new ImageminPlugin({
-            pngquant: {
-              quality: '95-100'
-            }
+            pngquant: ({quality: 50}),
+            plugins: [imageminMozjpeg({quality: 50})]
         })
     ]
 }
