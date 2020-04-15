@@ -3,6 +3,7 @@ const HTMLWebpackPlugin = require('html-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const imageminMozjpeg = require('imagemin-mozjpeg');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const ImageminWebpWebpackPlugin= require("imagemin-webp-webpack-plugin");
 
 module.exports = {
     entry: './src/index.js',
@@ -52,6 +53,7 @@ module.exports = {
             filename: '[name].css',
             chunkFilename: '[id].css',
         }),
+        new ImageminWebpWebpackPlugin(),
         new ImageminPlugin({
             pngquant: ({quality: 50}),
             plugins: [imageminMozjpeg({quality: 50})]

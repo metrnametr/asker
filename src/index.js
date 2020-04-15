@@ -1,7 +1,6 @@
 require('./style/main.scss');
 require('./slider');
 
-
 const collapsedItems = document.querySelectorAll('.collapse');
 
 
@@ -20,4 +19,4 @@ const buttonToggleMenu = document.querySelector('.toggle-menu');
 buttonToggleMenu.addEventListener('click', () => {
     const menu = document.querySelector('.nav-container');
     menu.classList.toggle('active');
-})
+});
