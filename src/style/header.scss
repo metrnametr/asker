@@ -1,10 +1,16 @@
 
 .header-top {
-    display: flex;
-    justify-content: space-between;
     background: $grey-color;
     border-bottom: #eaeaea;
-    vertical-align: center;
+    
+    @media screen and (max-width: $tableWidth) {
+        display: none;
+    }
+    .container {
+        display: flex;
+        justify-content: space-between;
+        vertical-align: center;
+    }
 
     .puh-container {
         width: 100%;
@@ -44,12 +50,23 @@
     justify-content: space-between;
     padding: 25px 8% !important;
 
+    @media screen and (max-width: $tableWidth) {
+        padding: 15px 8% !important;
+    }
     .brand {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
         img {
             object-fit: contain;
+            @media screen and (max-width: $tableWidth) {
+                margin-bottom: 10px;
+                width: 80%;
+            }
+        }
+
+        @media screen and (max-width: $tableWidth) {
+            justify-content: center;   
         }
     }
     .pacage-container {
@@ -59,6 +76,11 @@
         position: relative;
         color: $text-color;
         font-weight: 400;
+        font-size: 1rem;
+        @media screen and (max-width: $tableWidth) {
+            margin: 0 auto;
+            text-align: center;
+        }
         p:first-of-type {
             margin-bottom: 4px;
         }
@@ -78,11 +100,13 @@
 }
 
 .header-bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     background: $green-dark;
 
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
     .input-container {
         position: relative;
         &::before{
@@ -91,10 +115,52 @@
             right: 10px;
             top: 35%;
         }
+        @media screen and (max-width: $tableWidth) {
+            display: none;
+        }
+    }
+
+    nav {
+        @media screen and (max-width: $tableWidth) {
+            width: 100%;
+        }
+    }
+    .toggle-nav {
+        color: white;
+        display: none;
+        ul {
+            margin: 10px auto;
+            width: 90%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-transform: uppercase;
+            margin-top: 10px;
+            font-size: 1.2rem;
+            li:nth-of-type(2) {
+                font-size: 2rem;
+            }
+        }
+        @media screen and (max-width: $tableWidth) {
+            display: block;
+        }
     }
     .nav-container {
         display: flex;
+        @media screen and (max-width: $tableWidth) {
+            display: none;
+            flex-direction: column;
+            animation: toggle;
+            transition: all 0.15s ease-out;
+            &.active {
+                width: 90%;
+                margin: 0 auto;
+                display: flex;
+            }
+        }
         a {
+            width: 100%;
+            display: block;
             font-size: 18px;
             text-transform: uppercase;
             color: white;
@@ -108,6 +174,10 @@
         li {
             border-right: 1px dashed #89cac9;
             border-left: 1px dashed #223d3d;
+            @media screen and (max-width: $tableWidth) {
+                border: 0;
+                padding: 10px 0;
+            }
             &:first-of-type{
                 padding-left: 0;
                 border-left: 0;
@@ -124,16 +194,40 @@
     display: flex;
     font-weight: 400;
     margin-left: 70px;
+    @media screen and (max-width: $tableWidth) {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
     a {
         color: $highlight-color;
     }
 
+    p {
+        font-size: 1rem;
+    }
+
+    @media screen and (max-width: $phoneWidth) {
+        p {
+            font-size: .8rem;
+        }
+
+        .number {
+            font-size: 1.5rem;
+        }
+    }
+
     .number {
-        font-size: 30px;
+        font-size: 1.9rem;
         margin-bottom: 10px;
+        @media screen and (max-width: $phoneWidth) {
+            font-size: 1.5rem;
+        }
     }
     div:nth-of-type(2){
         margin-left: 40px;
+        @media screen and (max-width: $tableWidth) {
+            margin-left: 20px;;
+        }
     }
 }
 
@@ -147,5 +241,17 @@ input.search {
         font-size: 13px;
         color: #b9baba;
         font-style: italic;
+    }
+}
+
+
+@keyframes toggle {
+    0% {
+        height: 0;
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        height: 100%;
     }
 }

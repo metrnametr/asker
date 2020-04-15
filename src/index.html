@@ -8,16 +8,18 @@
 </head>
 <body>
     <header>
-            <div class="header-top container">
-                <div class="puh-container"></div>
-                <ul class="login-buttons">
-                    <li>
-                        <a href="./sign-in">Вход</a>
-                    </li>
-                    <li>
-                        <a href="./register">Регистрация</a>
-                    </li>
-                </ul>
+            <div class="header-top">
+                <div class="container">
+                    <div class="puh-container"></div>
+                    <ul class="login-buttons">
+                        <li>
+                            <a href="./sign-in">Вход</a>
+                        </li>
+                        <li>
+                            <a href="./register">Регистрация</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
             <div class="header-center container">
                 <div class="brand">
@@ -40,25 +42,33 @@
                 </div>
             </div>
 
-            <div class="header-bottom container">
-                <nav>
-                    <ul class="nav-container">
-                        <li>
-                            <a href="/about">о компании</a>
-                        </li>
-                        <li>
-                            <a href="/about">Услуги</a>
-                        </li>
-                        <li>
-                            <a href="/about">оплата и доставки</a>
-                        </li>
-                        <li>
-                            <a href="/about">контакты</a>
-                        </li>
-                    </ul>
-                </nav>
-                <div class="input-container">
-                    <input type="text" class="search" placeholder="Например, ортопедические подушки" />
+            <div class="header-bottom">
+                <div class="container">
+                    <nav>
+                        <nav class="toggle-nav">
+                            <ul>
+                                <li>Меню</li>
+                                <li class="toggle-menu">&#9776;</li>
+                            </ul>
+                        </nav>
+                        <ul class="nav-container">
+                            <li>
+                                <a href="/about">о компании</a>
+                            </li>
+                            <li>
+                                <a href="/about">Услуги</a>
+                            </li>
+                            <li>
+                                <a href="/about">оплата и доставки</a>
+                            </li>
+                            <li>
+                                <a href="/about">контакты</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="input-container">
+                        <input type="text" class="search" placeholder="Например, ортопедические подушки" />
+                    </div>
                 </div>
             </div>
     </header>
@@ -70,7 +80,7 @@
                 <p class="title">каталог</p>
                 <ul class="top-list">
                     <li><a href="#">Распродажа</a></li>
-                    <li class="collapse"><a href="#">Постельное белье</a>
+                    <li data-action ="toggle" class="collapse"><a data-action ="toggle" href="#">Постельное белье</a>
                         <ul>
                             <li><a href="#">Комплекты постельного белья</a></li>
                             <li><a href="#">1 спальные</a></li>
@@ -94,7 +104,7 @@
                     <li><a href="#">Балдахины</a></li>
                     <li><a href="#">Шторы</a></li>
                     <li><a href="#">Тюль</a></li>
-                    <li class="collapse"><a href="#">Кухонные принадлежности</a>
+                    <li data-action="toggle" class="collapse"><a data-action ="toggle" href="#">Кухонные принадлежности</a>
                         <ul>
                             <li><a href="#">Полотенца</a></li>
                             <li><a href="#">Скатерти</a></li>
@@ -103,7 +113,7 @@
                     </li>
                     <li><a href="#">Шторы</a></li>
                     <li><a href="#">Тюль</a></li>
-                    <li class="collapse"><a href="#">Для бани и ванной</a>
+                    <li data-action="toggle" class="collapse"><a data-action ="toggle" href="#">Для бани и ванной</a>
                         <ul>
                             <li><a href="#">Халаты</a></li>
                             <li><a href="#">Полотенца</a></li>
