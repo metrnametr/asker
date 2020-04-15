@@ -3,20 +3,21 @@
   "version": "1.0.0",
   "description": "",
   "main": "webpack.dev.js",
-  "dependencies": {
+  "devDependencies": {
     "css-loader": "^3.5.2",
     "file-loader": "^6.0.0",
     "html-loader": "^1.1.0",
     "html-webpack-plugin": "^4.2.0",
     "node-sass": "^4.13.1",
-    "reset-css": "^5.0.1",
     "sass-loader": "^8.0.2",
     "style-loader": "^1.1.3",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3"
   },
-  "devDependencies": {},
+  "dependencies": {
+    "reset-css": "^5.0.1"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --config ./webpack.dev.js --hot --open"
