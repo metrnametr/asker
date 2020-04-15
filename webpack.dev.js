@@ -22,7 +22,12 @@ module.exports = {
             },
             {
                 test: /\.(png|jpg)$/,
-                use: 'file-loader',
+                use: {
+                    loader: 'file-loader',
+                    options: {
+                        outputPath: 'img'
+                    }
+                },
                 exclude: /node_modules/
             },
             {
